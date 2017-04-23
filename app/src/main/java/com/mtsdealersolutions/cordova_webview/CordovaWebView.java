@@ -23,6 +23,7 @@ import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 
 import com.mtsdealersolutions.cordova_webview.engine.SystemWebView;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -126,7 +127,6 @@ public class CordovaWebView extends FrameLayout {
     protected void CordovaInit() {
         appView = makeWebView();
         mWebView = (com.mtsdealersolutions.cordova_webview.engine.SystemWebView) appView.getView();
-        mWebView.setBackgroundColor(getResources().getColor(R.color.webColorPrimaryDark));
         createViews();
         if (!appView.isInitialized()) {
             appView.init(cordovaInterface, pluginEntries, preferences);
@@ -176,6 +176,7 @@ public class CordovaWebView extends FrameLayout {
 
         appView.getView().requestFocusFromTouch();
     }
+
 
     public void WebViewReadyToSet() {
         addView(appView.getView());

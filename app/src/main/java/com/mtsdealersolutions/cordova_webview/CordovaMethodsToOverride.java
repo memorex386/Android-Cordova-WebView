@@ -9,7 +9,7 @@ import android.view.MenuItem;
  * Created by bradley.thome on 4/23/17.
  */
 
-public interface CordovaActivityLoad {
+public interface CordovaMethodsToOverride {
 
     void restoreInstanceState(Bundle savedInstanceBundle);
 

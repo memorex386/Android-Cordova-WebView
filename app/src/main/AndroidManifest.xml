@@ -1,0 +1,9 @@
+<manifest package="com.mtsdealersolutions.cordova_webview"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+
+    </application>
+
+</manifest>

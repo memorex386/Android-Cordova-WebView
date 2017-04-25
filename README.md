@@ -30,7 +30,7 @@ This gives great flexibility within your app, allowing to you have Activites/Fra
     dependencies
     {
     ...
-    compile 'com.mtsdealersolutions: cordova_webview:0.0.12'
+    compile 'com.mtsdealersolutions: cordova_webview:0.0.14'
     ...
     }
 

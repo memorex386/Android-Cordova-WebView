@@ -83,6 +83,45 @@ Load the CordovaWebView inside of a layout
     CordovaBaseFragment
     CordovaBaseFragmentSupportV4
     
+Fragment Example
+    
+    public class CordovaTestFragment extends CordovaBaseFragment_OR_CordovaBaseFragmentSupportV4 {
+    
+      @Override
+      public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+ 
+        // CordovaWebView is auto implemented in super.onViewCreated
+        super.onViewCreated(view, savedInstanceState);
+        
+          if (savedInstanceState == null) {
+            mCordovaWebView.loadUrl("file:///android_asset/www/index.html");
+          } else {
+            mCordovaWebView.loadSavedInstanceState(savedInstanceState);
+          }
+      }
+    
+    }
+    
+Fragment Example
+    
+    public class CordovaTestActivity extends CordovaBaseActivity_OR_ CordovaBaseAppCompatActivity {
+    
+       @Override
+       protected void onCreate(Bundle savedInstanceState) {
+          super.onCreate(savedInstanceState);
+          setContentView(R.layout.new_new_activity_main_web_view);
+
+          mCordovaWebView = (CordovaWebView) findViewById(R.id.cordova_web_view);
+
+          if (savedInstanceState == null) {
+            mCordovaWebView.loadUrl("file:///android_asset/www/index.html");
+          } else {
+            mCordovaWebView.loadSavedInstanceState(savedInstanceState);
+          }
+       }
+    
+    }
+    
     
 #### ...or manually attach the view to the Activity/Fragment Lifecycle...
 

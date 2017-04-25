@@ -20,17 +20,6 @@ public abstract class CordovaBaseAppCompatActivity extends AppCompatActivity imp
     }
 
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if (mCordovaWebView == null)
-            throw new RuntimeException("CordovaBaseAppCompatActivity must have a CordovaWebView attached before super.onCreate is called");
-
-
-        mCordovaWebView.loadSavedInstanceState(savedInstanceState);
-    }
-
     public void setCordovaWebView(CordovaWebView cordovaWebView) {
         mCordovaWebView = cordovaWebView;
     }
@@ -58,6 +47,11 @@ public abstract class CordovaBaseAppCompatActivity extends AppCompatActivity imp
     @CallSuper
     protected void onResume() {
         super.onResume();
+
+
+        if (mCordovaWebView == null)
+            throw new RuntimeException("CordovaBaseActivity must have a CordovaWebView attached before super.onCreate is called");
+
         mCordovaWebView.onResume();
     }
 

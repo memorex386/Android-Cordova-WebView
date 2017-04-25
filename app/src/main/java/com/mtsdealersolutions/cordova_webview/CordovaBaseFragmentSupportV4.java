@@ -45,10 +45,10 @@ public abstract class CordovaBaseFragmentSupportV4 extends Fragment implements C
         if (mCordovaWebView == null)
             throw new RuntimeException("CordovaBaseFragmentSupportV4 must have a CordovaWebView attached before super.onViewCreated is called");
 
-        mCordovaWebView.loadSavedInstanceState(savedInstanceState);
     }
 
     private boolean findCordovaView(View rootView) {
+        if (mCordovaWebView != null) return true;
         if (rootView == null) return false;
         if (rootView instanceof CordovaWebView) {
             mCordovaWebView = (CordovaWebView) rootView;

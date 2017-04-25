@@ -20,18 +20,6 @@ public class CordovaBaseActivity extends Activity implements CordovaWebView.init
         if (mCordovaWebView == null) mCordovaWebView = cordovaWebView;
     }
 
-    @Override
-    @CallSuper
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if (mCordovaWebView == null)
-            throw new RuntimeException("CordovaBaseActivity must have a CordovaWebView attached before super.onCreate is called");
-
-
-        mCordovaWebView.loadSavedInstanceState(savedInstanceState);
-    }
-
     @CallSuper
     public void setCordovaWebView(CordovaWebView cordovaWebView) {
         mCordovaWebView = cordovaWebView;
@@ -60,6 +48,11 @@ public class CordovaBaseActivity extends Activity implements CordovaWebView.init
     @CallSuper
     protected void onResume() {
         super.onResume();
+
+
+        if (mCordovaWebView == null)
+            throw new RuntimeException("CordovaBaseActivity must have a CordovaWebView attached before super.onCreate is called");
+
         mCordovaWebView.onResume();
     }
 

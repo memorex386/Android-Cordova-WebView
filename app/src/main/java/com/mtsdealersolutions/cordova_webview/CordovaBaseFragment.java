@@ -44,10 +44,10 @@ public abstract class CordovaBaseFragment extends Fragment implements CordovaWeb
         if (mCordovaWebView == null)
             throw new RuntimeException("CordovaBaseFragment must have a CordovaWebView attached before super.onViewCreated is called");
 
-        mCordovaWebView.loadSavedInstanceState(savedInstanceState);
     }
 
     private boolean findCordovaView(View rootView) {
+        if (mCordovaWebView != null) return true;
         if (rootView == null) return false;
         if (rootView instanceof CordovaWebView) {
             mCordovaWebView = (CordovaWebView) rootView;
